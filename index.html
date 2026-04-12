@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>マインスイーパ — Minesweeper</title>
+  <meta name="description" content="クラシックマインスイーパ。4 段階の難易度、キーボード操作、初手安全保証。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <header class="app-header">
+      <h1 data-i18n="title">マインスイーパ</h1>
+      <button id="lang-toggle" class="lang-btn" aria-label="Switch language">EN</button>
+    </header>
+
+    <!-- Difficulty selector -->
+    <nav class="difficulty-nav" aria-label="Difficulty">
+      <button class="diff-btn active" data-diff="Beginner" data-i18n="beginner">初級</button>
+      <button class="diff-btn" data-diff="Intermediate" data-i18n="intermediate">中級</button>
+      <button class="diff-btn" data-diff="Expert" data-i18n="expert">上級</button>
+      <button class="diff-btn" data-diff="Custom" data-i18n="custom">カスタム</button>
+    </nav>
+
+    <!-- Custom form -->
+    <div id="custom-form" class="custom-form" style="display:none" role="form" aria-label="Custom settings">
+      <label>
+        <span data-i18n="rows">行</span>
+        <input id="custom-rows" type="number" value="9" min="5" max="30" />
+      </label>
+      <label>
+        <span data-i18n="cols">列</span>
+        <input id="custom-cols" type="number" value="9" min="5" max="50" />
+      </label>
+      <label>
+        <span data-i18n="mines">地雷数</span>
+        <input id="custom-mines" type="number" value="10" min="1" max="800" />
+      </label>
+      <button id="custom-apply" data-i18n="apply">適用</button>
+    </div>
+
+    <!-- Status bar -->
+    <div class="status-bar">
+      <div class="lcd-display" aria-label="Mines remaining">
+        <span class="lcd-icon">💣</span>
+        <span id="mine-count" class="lcd-num">010</span>
+      </div>
+
+      <button id="smiley" class="smiley-btn" aria-label="New game">😊</button>
+
+      <div class="lcd-display" aria-label="Time">
+        <span class="lcd-icon">⏱</span>
+        <span id="timer" class="lcd-num">000</span>
+      </div>
+    </div>
+
+    <!-- Game grid -->
+    <div id="grid" class="grid" role="grid" aria-label="Minesweeper board"></div>
+
+    <!-- Best times -->
+    <aside id="best-times" class="best-times" aria-label="Best times"></aside>
+
+    <footer class="app-footer">
+      <a href="https://github.com/masaru87/minesweeper" target="_blank" rel="noopener">GitHub</a>
+      &nbsp;·&nbsp;
+      <span>SEN LLC</span>
+    </footer>
+
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
