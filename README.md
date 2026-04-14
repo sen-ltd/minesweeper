@@ -33,3 +33,10 @@ npm test
 ## ライセンス
 
 MIT. See [LICENSE](./LICENSE).
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/minesweeper/
+- 📝 dev.to: https://dev.to/sendotltd/building-minesweeper-with-a-pure-function-game-engine-and-bfs-flood-fill-33f7
+<!-- /sen-publish:links -->
